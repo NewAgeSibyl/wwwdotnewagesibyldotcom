@@ -1,42 +1,80 @@
 <!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SIBYL is an early-stage, rodent-first research project exploring biological identity preservation, reproducible animal models, and controlled developmental systems.">
-  <meta name="theme-color" content="#08130f">
-  <meta property="og:title" content="SIBYL — Biological identity, made measurable">
-  <meta property="og:description" content="A rodent-first research programme for identity-preserving biological lineages and more reproducible preclinical models.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.newagesibyl.com/">
-  <title>SIBYL — Biological identity, made measurable</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="new age sibyl project is a rodent-first R&amp;D programme exploring traceable biological lineages, controlled developmental systems and reproducible preclinical models." name="description"/>
+<meta content="#05080d" name="theme-color"/>
+<meta content="new age sibyl project — traceable biological systems" property="og:title"/>
+<meta content="A rodent-first R&amp;D programme combining reproductive biology, controlled environments, simulation and genomic quality control." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.newagesibyl.com/" property="og:url"/>
+<title>new age sibyl project — traceable biological systems</title>
+<style>
     :root {
-      --bg: #07110d;
-      --panel: #0d1b15;
-      --panel-2: #11241c;
-      --text: #ecf8f1;
-      --muted: #a9c0b4;
-      --line: #244235;
-      --accent: #64e3a5;
-      --accent-2: #b9ffd9;
+      --bg: #03070c;
+      --panel: #08131a;
+      --panel-2: #0d1c25;
+      --text: #eef8f5;
+      --muted: #adc1c8;
+      --line: #21414b;
+      --green: #65e6a7;
+      --green-soft: #b9ffdb;
+      --blue: #59a8ff;
+      --blue-soft: #b7d9ff;
+      --yellow: #ffd75a;
+      --yellow-soft: #fff1ad;
       --max: 1120px;
       --radius: 20px;
+      --mx: 50vw;
+      --my: 20vh;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
 
     body {
       margin: 0;
+      min-height: 100vh;
       color: var(--text);
       background:
-        radial-gradient(circle at 20% 0%, rgba(100, 227, 165, 0.12), transparent 34rem),
-        radial-gradient(circle at 95% 18%, rgba(90, 160, 125, 0.10), transparent 28rem),
+        radial-gradient(circle at 12% 0%, rgba(101, 230, 167, 0.16), transparent 32rem),
+        radial-gradient(circle at 92% 14%, rgba(89, 168, 255, 0.16), transparent 31rem),
+        radial-gradient(circle at 54% 105%, rgba(255, 215, 90, 0.09), transparent 30rem),
         var(--bg);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(circle 360px at var(--mx) var(--my), rgba(89, 168, 255, 0.09), transparent 72%);
+      transition: background 120ms linear;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
     }
 
     a { color: inherit; }
@@ -49,10 +87,19 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(7, 17, 13, 0.82);
-      backdrop-filter: blur(16px);
+      background: rgba(3, 7, 12, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -1px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green), var(--blue), var(--yellow), transparent);
+      opacity: 0.55;
     }
 
     nav {
@@ -69,27 +116,32 @@
       gap: 12px;
       text-decoration: none;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.06em;
     }
 
     .mark {
-      width: 34px;
-      height: 34px;
-      border: 1px solid var(--accent);
-      border-radius: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
       display: grid;
       place-items: center;
-      box-shadow: inset 0 0 0 5px rgba(100, 227, 165, 0.08);
+      position: relative;
+      background: linear-gradient(var(--panel), var(--panel)) padding-box,
+        conic-gradient(from 30deg, var(--green), var(--blue), var(--yellow), var(--green)) border-box;
+      border: 1px solid transparent;
+      box-shadow: 0 0 34px rgba(89, 168, 255, 0.14);
+      animation: markFloat 4s ease-in-out infinite;
     }
 
     .mark::before {
       content: "";
-      width: 12px;
-      height: 18px;
-      border: 2px solid var(--accent-2);
+      width: 13px;
+      height: 19px;
+      border: 2px solid var(--green-soft);
       border-top: 0;
       border-bottom: 0;
       transform: skew(-16deg);
+      filter: drop-shadow(0 0 5px rgba(101,230,167,0.55));
     }
 
     .nav-links {
@@ -101,11 +153,28 @@
     }
 
     .nav-links a {
+      position: relative;
       text-decoration: none;
     }
 
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -7px;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--yellow));
+      transition: transform 180ms ease;
+    }
+
     .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--accent-2); }
+    .nav-links a:focus-visible { color: var(--text); }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after { transform: scaleX(1); }
 
     .hero {
       padding: 110px 0 80px;
@@ -124,8 +193,8 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 8px 12px;
-      color: var(--accent-2);
-      background: rgba(17, 36, 28, 0.75);
+      color: var(--green-soft);
+      background: rgba(13, 28, 37, 0.82);
       font-size: 0.82rem;
       letter-spacing: 0.04em;
     }
@@ -134,16 +203,26 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 18px var(--accent);
+      background: var(--green);
+      box-shadow: 0 0 18px var(--green);
+      animation: pulseDot 2.1s ease-in-out infinite;
     }
 
     h1 {
       margin: 24px 0 18px;
-      max-width: 820px;
+      max-width: 840px;
       font-size: clamp(3rem, 8vw, 6.4rem);
       line-height: 0.96;
       letter-spacing: -0.065em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(92deg, var(--green-soft) 4%, var(--blue-soft) 49%, var(--yellow-soft) 94%);
+      background-size: 180% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientShift 7s ease-in-out infinite alternate;
     }
 
     .lead {
@@ -169,45 +248,85 @@
       border-radius: 13px;
       text-decoration: none;
       font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
     .button.primary {
-      color: #062115;
-      background: var(--accent);
-      border-color: var(--accent);
+      color: #04120d;
+      background: linear-gradient(100deg, var(--green), var(--yellow));
+      border-color: transparent;
+      box-shadow: 0 12px 34px rgba(101, 230, 167, 0.13);
     }
 
     .button:hover,
-    .button:focus-visible { transform: translateY(-1px); }
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+      box-shadow: 0 14px 36px rgba(89, 168, 255, 0.12);
+    }
 
     .hero-card,
     .card,
     .roadmap-item,
     .team-card,
     .boundary {
+      --rx: 0deg;
+      --ry: 0deg;
       border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(17,36,28,0.94), rgba(9,23,17,0.94));
+      background:
+        linear-gradient(145deg, rgba(13, 28, 37, 0.96), rgba(5, 13, 18, 0.96)) padding-box,
+        linear-gradient(120deg, rgba(101,230,167,0.35), rgba(89,168,255,0.18), rgba(255,215,90,0.16)) border-box;
       border-radius: var(--radius);
+      transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+      transform-style: preserve-3d;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tilt:hover {
+      border-color: rgba(89,168,255,0.52);
+      box-shadow: 0 22px 70px rgba(0,0,0,0.25), 0 0 38px rgba(89,168,255,0.07);
     }
 
     .hero-card {
       padding: 26px;
+      position: relative;
+      overflow: hidden;
       box-shadow: 0 24px 90px rgba(0,0,0,0.28);
     }
 
-    .hero-card h2 { margin-top: 0; font-size: 1rem; color: var(--accent-2); }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -12% -42% 25%;
+      height: 190px;
+      border-radius: 50%;
+      background: conic-gradient(from 190deg, transparent, rgba(89,168,255,0.18), rgba(255,215,90,0.14), transparent);
+      filter: blur(12px);
+      animation: slowSpin 10s linear infinite;
+      pointer-events: none;
+    }
+
+    .hero-card h2 { margin-top: 0; font-size: 1rem; color: var(--blue-soft); }
 
     .signal {
       display: grid;
       gap: 12px;
       margin-top: 18px;
+      position: relative;
+      z-index: 1;
     }
 
     .signal div {
       padding: 15px;
       border-radius: 14px;
-      background: rgba(3, 12, 8, 0.5);
+      background: rgba(2, 8, 12, 0.56);
       border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .signal div:hover {
+      transform: translateX(4px);
+      border-color: rgba(255,215,90,0.38);
     }
 
     .signal strong { display: block; margin-bottom: 3px; }
@@ -224,7 +343,7 @@
     }
 
     .kicker {
-      color: var(--accent);
+      color: var(--green);
       font-size: 0.82rem;
       font-weight: 800;
       letter-spacing: 0.14em;
@@ -260,11 +379,14 @@
     .boundary { padding: 24px; }
 
     .card .number {
-      color: var(--accent);
+      color: var(--yellow);
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.12em;
     }
+
+    .card:nth-child(2n) .number { color: var(--blue); }
+    .card:nth-child(3n) .number { color: var(--green); }
 
     .card h3,
     .team-card h3 { margin: 12px 0 9px; }
@@ -272,6 +394,20 @@
     .card p,
     .team-card p,
     .boundary p { margin: 0; color: var(--muted); }
+
+    .team-card:first-child {
+      border-color: rgba(255,215,90,0.42);
+      box-shadow: inset 0 1px 0 rgba(255,215,90,0.08);
+    }
+
+    .team-card:first-child h3::after {
+      content: "";
+      color: var(--yellow);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
     .roadmap {
       display: grid;
@@ -287,10 +423,11 @@
     }
 
     .roadmap-item .time {
-      color: var(--accent-2);
+      color: var(--blue-soft);
       font-weight: 800;
     }
 
+    .roadmap-item:nth-child(even) .time { color: var(--yellow-soft); }
     .roadmap-item h3 { margin: 0 0 5px; }
     .roadmap-item p { margin: 0; color: var(--muted); }
 
@@ -308,40 +445,58 @@
     }
 
     .mini-orbit {
-      width: 170px;
+      width: 178px;
       aspect-ratio: 1;
       border: 1px solid var(--line);
       border-radius: 50%;
       display: grid;
       place-items: center;
       position: relative;
+      animation: orbitFloat 4.6s ease-in-out infinite;
     }
 
-    .mini-orbit::before,
-    .mini-orbit::after {
-      content: "";
+    .orbit-ring {
       position: absolute;
-      border: 1px solid rgba(100,227,165,0.35);
+      inset: 24px;
+      border: 1px solid rgba(89,168,255,0.45);
       border-radius: 50%;
-      transform: rotate(35deg);
+      animation: slowSpin 8s linear infinite;
     }
 
-    .mini-orbit::before { width: 130px; height: 55px; }
-    .mini-orbit::after { width: 55px; height: 130px; }
+    .orbit-ring.second {
+      inset: 44px 15px;
+      border-color: rgba(101,230,167,0.4);
+      transform: rotate(58deg);
+      animation-direction: reverse;
+      animation-duration: 6s;
+    }
 
-    .mini-orbit span {
-      width: 24px;
-      height: 24px;
+    .orbit-dot {
+      position: absolute;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 28px rgba(100,227,165,0.75);
+      box-shadow: 0 0 24px currentColor;
+    }
+
+    .orbit-dot.green { color: var(--green); background: var(--green); top: 16px; }
+    .orbit-dot.blue { color: var(--blue); background: var(--blue); right: 16px; bottom: 43px; }
+    .orbit-dot.yellow { color: var(--yellow); background: var(--yellow); left: 22px; bottom: 33px; }
+
+    .orbit-core {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--blue), var(--yellow));
+      box-shadow: 0 0 34px rgba(89,168,255,0.5);
+      animation: pulseCore 2.8s ease-in-out infinite;
     }
 
     .notice {
       margin-top: 22px;
       padding: 18px 20px;
-      border-left: 3px solid var(--accent);
-      background: rgba(100,227,165,0.07);
+      border-left: 3px solid var(--yellow);
+      background: linear-gradient(90deg, rgba(255,215,90,0.08), rgba(89,168,255,0.05));
       color: var(--muted);
     }
 
@@ -357,6 +512,46 @@
       justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 620ms ease, transform 620ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes markFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-3px) rotate(3deg); }
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.45); opacity: 0.62; }
+    }
+
+    @keyframes gradientShift {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    @keyframes slowSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes orbitFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulseCore {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.16); filter: brightness(1.2); }
     }
 
     @media (max-width: 860px) {
@@ -380,209 +575,483 @@
       .team-grid { grid-template-columns: 1fr; }
       .roadmap-item { grid-template-columns: 1fr; gap: 8px; }
       h1 { font-size: clamp(3rem, 17vw, 4.6rem); }
+      .brand { letter-spacing: 0.025em; font-size: 0.88rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      body::before { display: none; }
     }
   </style>
-</head>
-<body>
-  <header>
-    <div class="wrap">
-      <nav aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="SIBYL home">
-          <span class="mark" aria-hidden="true"></span>
-          SIBYL
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root {
+  --bg: #02050a;
+  --panel: #07111d;
+  --panel-2: #0b1c2d;
+  --text: #f4fbff;
+  --muted: #a7bbc9;
+  --line: rgba(135, 202, 235, .22);
+  --green: #43f59a;
+  --green-soft: #a2ffd2;
+  --blue: #36a4ff;
+  --blue-soft: #91d2ff;
+  --yellow: #ffd93d;
+  --yellow-soft: #fff09c;
+  --mx: 50vw;
+  --my: 25vh;
+}
+body {
+  background:
+    radial-gradient(circle at 12% -5%, rgba(67,245,154,.22), transparent 34rem),
+    radial-gradient(circle at 94% 4%, rgba(54,164,255,.24), transparent 38rem),
+    radial-gradient(circle at 50% 110%, rgba(255,217,61,.11), transparent 32rem),
+    linear-gradient(180deg, #02050a, #05101a 52%, #02050a);
+}
+body.modal-open { overflow: hidden; }
+body::before {
+  background: radial-gradient(circle 430px at var(--mx) var(--my), rgba(54,164,255,.13), transparent 73%);
+}
+body::after {
+  opacity: .34;
+  background-image:
+    linear-gradient(rgba(138,202,235,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138,202,235,.05) 1px, transparent 1px);
+  background-size: 58px 58px;
+}
+#field { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; opacity: .72; }
+header { background: linear-gradient(180deg, rgba(2,5,10,.94), rgba(2,5,10,.68)); }
+header::after { opacity: .8; background: linear-gradient(90deg, transparent, var(--green), var(--blue), var(--yellow), transparent); background-size: 220% 100%; animation: spectrum 7s linear infinite; }
+.brand { text-transform: lowercase; }
+.nav-contact, .footer-contact { border: 0; background: transparent; color: inherit; cursor: pointer; padding: 7px 0; }
+.nav-contact:hover, .footer-contact:hover { color: var(--blue-soft); }
+.hero {
+  min-height: 100svh;
+  padding: 128px 0 62px;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 48px;
+  position: relative;
+}
+.hero-copy { position: relative; z-index: 3; }
+.hero-enter { animation: launchIn .9s cubic-bezier(.2,.75,.25,1) both; }
+.hero-machine.hero-enter { animation-delay: .12s; }
+.hero h1 { font-size: clamp(3.35rem, 7.9vw, 7.2rem); line-height: .91; letter-spacing: -.068em; }
+.tri-green, .tri-blue, .tri-yellow { display: inline-block; color: transparent; background-clip: text; -webkit-background-clip: text; background-size: 220% 100%; animation: textSpectrum 5s linear infinite; }
+.tri-green { background-image: linear-gradient(90deg, var(--green-soft), var(--green), var(--blue-soft), var(--green-soft)); }
+.tri-blue { background-image: linear-gradient(90deg, var(--blue-soft), var(--blue), var(--yellow-soft), var(--blue-soft)); }
+.tri-yellow { background-image: linear-gradient(90deg, var(--yellow-soft), var(--yellow), var(--green-soft), var(--yellow-soft)); }
+.eyebrow { border-color: rgba(67,245,154,.34); color: var(--green-soft); background: rgba(3,13,20,.74); box-shadow: 0 0 24px rgba(67,245,154,.08); }
+.actions { margin-top: 32px; }
+.button { min-height: 49px; border-radius: 13px; background: rgba(8,19,33,.8); }
+.button.primary { color: #03110b; background: linear-gradient(105deg, var(--green), #70f6b4 58%, var(--yellow)); border-color: transparent; box-shadow: 0 12px 36px rgba(67,245,154,.18); }
+.button.online { border-color: rgba(54,164,255,.55); background: linear-gradient(115deg, rgba(54,164,255,.2), rgba(8,19,33,.87)); }
+.launch-chips { margin-top: 33px; display: flex; flex-wrap: wrap; gap: 9px; }
+.launch-chips span { position: relative; overflow: hidden; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: #c8d7e0; background: rgba(3,10,17,.58); font-size: .76rem; letter-spacing: .04em; }
+.launch-chips span::before { content:""; position:absolute; inset:0; transform:translateX(-115%); background:linear-gradient(90deg,transparent,rgba(255,255,255,.17),transparent); animation: chipSweep 5.5s ease-in-out infinite; }
+.launch-chips span:nth-child(2)::before { animation-delay:.8s; } .launch-chips span:nth-child(3)::before { animation-delay:1.6s; } .launch-chips span:nth-child(4)::before { animation-delay:2.4s; }
+.hero-machine { min-height: 600px; position: relative; display: grid; place-items: center; perspective: 1100px; }
+.machine-shell { width:min(100%,570px); aspect-ratio:1/1.03; position:relative; overflow:hidden; border:1px solid rgba(145,210,255,.3); border-radius:36px; background:linear-gradient(135deg,rgba(67,245,154,.065),transparent 38%),linear-gradient(315deg,rgba(255,217,61,.065),transparent 38%),rgba(5,13,23,.78); box-shadow:0 36px 95px rgba(0,0,0,.45),inset 0 0 55px rgba(54,164,255,.055),0 0 70px rgba(54,164,255,.1); transform-style:preserve-3d; transition:transform .16s ease; }
+.machine-shell::before { content:""; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent 0 28px,rgba(141,208,255,.04) 29px 30px),repeating-linear-gradient(90deg,transparent 0 28px,rgba(141,208,255,.04) 29px 30px); mask-image:radial-gradient(circle,black,transparent 76%); }
+.scan-line { position:absolute; left:-30%; right:-30%; height:2px; top:12%; background:linear-gradient(90deg,transparent,var(--blue),var(--green),var(--yellow),transparent); box-shadow:0 0 16px var(--blue); animation:scan 4.2s ease-in-out infinite; z-index:3; }
+.orbit { position:absolute; left:50%; top:48%; border-radius:50%; transform:translate(-50%,-50%); border:1px solid rgba(145,210,255,.26); }
+.orbit i { position:absolute; width:12px; height:12px; border-radius:50%; left:50%; top:-6px; transform:translateX(-50%); }
+.orbit-a { width:67%; aspect-ratio:1; animation:spin 19s linear infinite; } .orbit-a i { background:var(--blue); box-shadow:0 0 18px var(--blue); }
+.orbit-b { width:49%; aspect-ratio:1; border-color:rgba(67,245,154,.28); animation:spinBack 13s linear infinite; } .orbit-b i { background:var(--green); box-shadow:0 0 18px var(--green); }
+.orbit-c { width:31%; aspect-ratio:1; border-color:rgba(255,217,61,.3); animation:breathe 3.2s ease-in-out infinite; } .orbit-c i { background:var(--yellow); box-shadow:0 0 18px var(--yellow); }
+.machine-core { position:absolute; left:50%; top:48%; width:23%; aspect-ratio:1; transform:translate(-50%,-50%); display:grid; place-items:center; border-radius:50%; background:conic-gradient(from 20deg,rgba(67,245,154,.85),rgba(54,164,255,.85),rgba(255,217,61,.85),rgba(67,245,154,.85)); box-shadow:0 0 50px rgba(54,164,255,.25),inset 0 0 30px rgba(2,5,10,.6); animation:coreFloat 4s ease-in-out infinite; }
+.machine-core span { width:74%; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; background:#050c15; font-size:.72rem; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }
+.machine-node { position:absolute; min-width:116px; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:rgba(3,10,18,.9); box-shadow:0 12px 35px rgba(0,0,0,.35); font-size:.72rem; font-weight:800; letter-spacing:.05em; text-align:center; text-transform:uppercase; animation:nodeFloat 4.5s ease-in-out infinite; }
+.node-model { left:6%; top:15%; color:var(--green); } .node-control { right:5%; top:17%; color:var(--blue); animation-delay:.5s; } .node-validate { left:5%; bottom:17%; color:var(--yellow); animation-delay:1s; } .node-repeat { right:5%; bottom:15%; color:var(--green); animation-delay:1.5s; }
+.machine-readout { position:absolute; left:22px; right:22px; bottom:18px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.machine-readout span { padding:7px 8px; border:1px solid rgba(255,255,255,.09); border-radius:10px; background:rgba(2,7,12,.6); color:#9fb3c1; font-size:.65rem; letter-spacing:.08em; text-align:center; text-transform:uppercase; }
+.launch-ticker { position:absolute; left:0; right:0; bottom:0; overflow:hidden; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); background:rgba(3,8,14,.65); backdrop-filter:blur(12px); }
+.ticker-track { width:max-content; display:flex; gap:34px; padding:10px 0; color:#9fb3c1; font-size:.73rem; font-weight:750; letter-spacing:.11em; text-transform:uppercase; animation:tickerMove 25s linear infinite; }
+.ticker-track span::before { content:"◆"; margin-right:12px; color:var(--green); } .ticker-track span:nth-child(3n+2)::before { color:var(--blue); } .ticker-track span:nth-child(3n)::before { color:var(--yellow); }
+section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.25),rgba(67,245,154,.25),rgba(255,217,61,.17),transparent); }
+.kicker { color:var(--yellow); }
+.card,.team-card,.roadmap-item,.boundary { border-color:rgba(135,202,235,.2); background:linear-gradient(145deg,rgba(54,164,255,.05),transparent 40%),rgba(7,16,27,.73); box-shadow:0 24px 68px rgba(0,0,0,.23); }
+.card::before,.team-card::before,.roadmap-item::before,.boundary::before { content:""; position:absolute; inset:0; opacity:0; background:radial-gradient(circle 230px at var(--cx,50%) var(--cy,50%),rgba(54,164,255,.17),transparent 72%); transition:opacity .2s ease; pointer-events:none; }
+.card:hover::before,.team-card:hover::before,.roadmap-item:hover::before,.boundary:hover::before { opacity:1; }
+.number { color:var(--green); } .grid-3 .card:nth-child(2) .number,.grid-4 .card:nth-child(2) .number { color:var(--blue); } .grid-3 .card:nth-child(3) .number,.grid-4 .card:nth-child(3) .number { color:var(--yellow); }
+.role { display:inline-flex; margin-bottom:28px; padding:6px 9px; border-radius:8px; background:rgba(67,245,154,.11); color:var(--green-soft); font-size:.71rem; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }
+.team-card:nth-child(2) .role { background:rgba(54,164,255,.11); color:var(--blue-soft); } .team-card:nth-child(3) .role { background:rgba(255,217,61,.11); color:var(--yellow-soft); }
+.team-card h3 { font-size:1.55rem; letter-spacing:-.03em; }
+.contact-modal { position:fixed; inset:0; z-index:100; display:none; place-items:center; padding:22px; }
+.contact-modal.open { display:grid; }
+.modal-backdrop { position:absolute; inset:0; border:0; background:rgba(0,4,8,.8); backdrop-filter:blur(12px); }
+.modal-card { width:min(100%,540px); position:relative; z-index:1; border:1px solid rgba(141,208,255,.4); border-radius:25px; padding:29px; background:radial-gradient(circle at 92% 5%,rgba(54,164,255,.17),transparent 35%),radial-gradient(circle at 5% 100%,rgba(67,245,154,.13),transparent 42%),#07111d; box-shadow:0 40px 120px rgba(0,0,0,.7),0 0 45px rgba(54,164,255,.11); animation:modalIn .22s ease both; }
+.modal-close { position:absolute; right:15px; top:15px; width:38px; height:38px; border:1px solid var(--line); border-radius:11px; background:rgba(2,8,14,.7); color:var(--text); cursor:pointer; font-size:1.25rem; }
+.modal-card h2 { padding-right:42px; font-size:clamp(2rem,7vw,3.2rem); } .modal-card p { color:var(--muted); }
+.email-box { margin-top:22px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px; border:1px solid rgba(67,245,154,.3); border-radius:14px; background:rgba(2,9,15,.75); }
+.email-box a { overflow-wrap:anywhere; color:var(--green-soft); font-weight:760; text-decoration:none; }
+#copyEmail { flex:0 0 auto; border:1px solid rgba(54,164,255,.4); border-radius:10px; padding:8px 11px; background:rgba(54,164,255,.11); color:var(--blue-soft); cursor:pointer; }
+@keyframes spectrum { to { background-position:220% 0; } }
+@keyframes launchIn { from { opacity:0; transform:translateY(28px) scale(.98); } }
+@keyframes textSpectrum { to { background-position:-220% 0; } }
+@keyframes chipSweep { 0%,62%,100% { transform:translateX(-115%); } 78% { transform:translateX(115%); } }
+@keyframes scan { 0%,100% { top:12%; opacity:.25; } 50% { top:83%; opacity:.95; } }
+@keyframes spin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+@keyframes spinBack { to { transform:translate(-50%,-50%) rotate(-360deg); } }
+@keyframes breathe { 0%,100% { transform:translate(-50%,-50%) scale(.96); } 50% { transform:translate(-50%,-50%) scale(1.05); } }
+@keyframes coreFloat { 0%,100% { transform:translate(-50%,-50%) translateY(-4px); } 50% { transform:translate(-50%,-50%) translateY(5px); } }
+@keyframes nodeFloat { 0%,100% { transform:translateY(-4px); } 50% { transform:translateY(5px); } }
+@keyframes tickerMove { to { transform:translateX(-50%); } }
+@keyframes modalIn { from { opacity:0; transform:translateY(12px) scale(.98); } }
+@media (max-width:980px) { .hero { grid-template-columns:1fr; } .hero-machine { min-height:510px; } }
+@media (max-width:760px) { .nav-links a { display:none; } .hero-machine { min-height:430px; } .machine-node { min-width:98px; font-size:.62rem; padding:8px; } .machine-readout { display:none; } }
+@media (max-width:520px) { .hero { padding-top:104px; gap:25px; } .hero h1 { font-size:clamp(3rem,17vw,4.9rem); } .hero-machine { min-height:365px; } .machine-shell { border-radius:24px; } .actions { display:grid; } .button { width:100%; } .email-box { align-items:stretch; flex-direction:column; } #copyEmail { width:100%; } }
+@media (prefers-reduced-motion:reduce) { #field { display:none; } }
+</style></head>
+<body><canvas aria-hidden="true" id="field"></canvas>
+<header>
+<div class="wrap">
+<nav aria-label="Primary navigation">
+<a aria-label="new age sibyl project home" class="brand" href="#top">
+<span aria-hidden="true" class="mark"></span>
+          new age sibyl project
         </a>
-        <div class="nav-links">
-          <a href="#problem">Problem</a>
-          <a href="#approach">Approach</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#team">Team</a>
-          <a href="#boundaries">Boundaries</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-    <div class="wrap hero">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> Early-stage research programme</div>
-        <h1>Biological identity, made measurable.</h1>
-        <p class="lead">
-          SIBYL is a rodent-first project exploring how reproductive biology, controlled developmental environments, simulation and genomic quality control could enable more traceable and reproducible laboratory animal lineages.
-        </p>
-        <div class="actions">
-          <a class="button primary" href="#roadmap">See the first 24 months</a>
-          <a class="button" href="https://github.com/NewAgeSibyl" rel="noopener">View the public GitHub organisation</a>
-        </div>
-      </div>
-
-      <aside class="hero-card" aria-label="Current project status">
-        <h2>Current status</h2>
-        <div class="status"><span class="dot"></span> Architecture and planning</div>
-        <div class="signal">
-          <div><strong>Species focus</strong><span>Non-human laboratory rodents</span></div>
-          <div><strong>Immediate objective</strong><span>Validate one decisive subsystem, not a complete cloning pipeline</span></div>
-          <div><strong>Method</strong><span>Simulation → physical controls → qualified partner-lab study</span></div>
-          <div><strong>Evidence standard</strong><span>Predefined outputs, repeatability and independent review</span></div>
-        </div>
-      </aside>
-    </div>
-
-    <section id="problem">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="kicker">The problem</div>
-            <h2>“Standardized” does not mean fully traceable.</h2>
-          </div>
-          <p class="section-copy">
-            Laboratory animals can differ through genetic drift, de novo mutations, epigenetic state, microbiome, housing, diet, handling, age and developmental history. SIBYL asks whether laboratories can preserve and verify a biological reference lineage more accurately than present breeding and cloning methods allow.
+<div class="nav-links">
+<a href="#problem">Problem</a>
+<a href="#approach">Approach</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#team">Team</a>
+<a href="#boundaries">Boundaries</a>
+<button class="nav-contact contact-trigger" type="button">contact</button></div>
+</nav>
+</div>
+</header>
+<main id="top">
+<div class="wrap hero">
+<div class="hero-copy hero-enter">
+<div class="eyebrow"><span class="dot"></span> rodent-first biological systems r&amp;d</div>
+<h1><span class="tri-green">trace</span> the lineage.<br/><span class="tri-blue">control</span> the system.<br/><span class="tri-yellow">test</span> the claim.</h1>
+<p class="lead">new age sibyl project explores whether reproductive biology, controlled developmental environments, simulation and genomic quality control can be integrated into more traceable and reproducible laboratory animal lineages.</p>
+<div class="actions">
+<a class="button primary" href="#approach">explore the architecture <span aria-hidden="true">→</span></a>
+<a class="button online" href="https://github.com/NewAgeSibyl" rel="noopener" target="_blank">follow our work online <span aria-hidden="true">↗</span></a>
+<button class="button contact-trigger" type="button">contact the project</button>
+</div>
+<div aria-label="Project characteristics" class="launch-chips">
+<span>non-human</span><span>rodent-first</span><span>stage-gated</span><span>wet-lab directed</span>
+</div>
+</div>
+<div aria-label="Animated project architecture" class="hero-machine hero-enter">
+<div class="machine-shell" id="machineShell">
+<div class="scan-line"></div>
+<div class="orbit orbit-a"><i></i></div>
+<div class="orbit orbit-b"><i></i></div>
+<div class="orbit orbit-c"><i></i></div>
+<div class="machine-core"><span>identity</span></div>
+<div class="machine-node node-model">model</div>
+<div class="machine-node node-control">control</div>
+<div class="machine-node node-validate">validate</div>
+<div class="machine-node node-repeat">repeat</div>
+<div class="machine-readout"><span>simulation</span><span>physical systems</span><span>partner lab</span></div>
+</div>
+</div>
+<div aria-hidden="true" class="launch-ticker">
+<div class="ticker-track">
+<span>biological identity</span><span>developmental control</span><span>genomic fidelity</span><span>reproducible models</span><span>closed-loop sensing</span><span>qualified validation</span>
+<span>biological identity</span><span>developmental control</span><span>genomic fidelity</span><span>reproducible models</span><span>closed-loop sensing</span><span>qualified validation</span>
+</div>
+</div>
+</div>
+<section id="problem">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="kicker">The problem</div>
+<h2>“Standardized” does not mean fully traceable.</h2>
+</div>
+<p class="section-copy">
+            Laboratory animals can differ through genetic drift, de novo mutations, epigenetic state, microbiome, housing, diet, handling, age and developmental history. new age sibyl project asks whether laboratories can preserve and verify a biological reference lineage more accurately than present breeding and cloning methods allow.
           </p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <span class="number">01</span>
-            <h3>Identity</h3>
-            <p>Measure biological starting conditions instead of assuming that a strain label captures every relevant difference.</p>
-          </article>
-          <article class="card">
-            <span class="number">02</span>
-            <h3>Development</h3>
-            <p>Treat developmental environment and lineage history as part of the experimental system, not invisible background.</p>
-          </article>
-          <article class="card">
-            <span class="number">03</span>
-            <h3>Reproducibility</h3>
-            <p>Create stable reference baselines against which deliberate biological variation can be tested across sites and time.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="approach">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="kicker">The approach</div>
-            <h2>A wet-lab goal with an engineering control layer.</h2>
-          </div>
-          <p class="section-copy">
+</div>
+<div class="grid-3">
+<article class="card tilt reveal">
+<span class="number">01</span>
+<h3>Identity</h3>
+<p>Measure biological starting conditions instead of assuming that a strain label captures every relevant difference.</p>
+</article>
+<article class="card tilt reveal">
+<span class="number">02</span>
+<h3>Development</h3>
+<p>Treat developmental environment and lineage history as part of the experimental system, not invisible background.</p>
+</article>
+<article class="card tilt reveal">
+<span class="number">03</span>
+<h3>Reproducibility</h3>
+<p>Create stable reference baselines against which deliberate biological variation can be tested across sites and time.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="approach">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="kicker">The approach</div>
+<h2>A wet-lab goal with an engineering control layer.</h2>
+</div>
+<p class="section-copy">
             Simulation and AI are used to narrow assumptions and monitor quality; they do not replace the biological programme. Each stage must produce evidence before the next, more expensive stage begins.
           </p>
-        </div>
-        <div class="grid-4">
-          <article class="card">
-            <span class="number">MODEL</span>
-            <h3>Map failure modes</h3>
-            <p>Build a reviewed architecture, literature map, simulation specification and risk register.</p>
-          </article>
-          <article class="card">
-            <span class="number">BUILD</span>
-            <h3>Prototype controls</h3>
-            <p>Test sensing, imaging, environmental stability and closed-loop operation without reproductive experiments.</p>
-          </article>
-          <article class="card">
-            <span class="number">VALIDATE</span>
-            <h3>Partner-lab study</h3>
-            <p>Test one narrow biological subsystem through a qualified laboratory with appropriate oversight.</p>
-          </article>
-          <article class="card">
-            <span class="number">REPEAT</span>
-            <h3>Demand replication</h3>
-            <p>Compare experiment with simulation, repeat the result and obtain independent technical review.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="kicker">Roadmap</div>
-            <h2>The first 24 months.</h2>
-          </div>
-          <p class="section-copy">
+</div>
+<div class="grid-4">
+<article class="card tilt reveal">
+<span class="number">MODEL</span>
+<h3>Map failure modes</h3>
+<p>Build a reviewed architecture, literature map, simulation specification and risk register.</p>
+</article>
+<article class="card tilt reveal">
+<span class="number">BUILD</span>
+<h3>Prototype controls</h3>
+<p>Test sensing, imaging, environmental stability and closed-loop operation without reproductive experiments.</p>
+</article>
+<article class="card tilt reveal">
+<span class="number">VALIDATE</span>
+<h3>Partner-lab study</h3>
+<p>Test one narrow biological subsystem through a qualified laboratory with appropriate oversight.</p>
+</article>
+<article class="card tilt reveal">
+<span class="number">REPEAT</span>
+<h3>Demand replication</h3>
+<p>Compare experiment with simulation, repeat the result and obtain independent technical review.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="roadmap">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="kicker">Roadmap</div>
+<h2>The first 24 months.</h2>
+</div>
+<p class="section-copy">
             The first programme is designed to convert an informed hypothesis into a credible experimental platform. It is not presented as sufficient to complete indefinite cloning.
           </p>
-        </div>
-        <div class="roadmap">
-          <article class="roadmap-item">
-            <div class="time">Months 0–3</div>
-            <div><h3>Architecture gate</h3><p>Technical architecture, literature map, failure-mode register, ethics route, simulation specification and external review.</p></div>
-          </article>
-          <article class="roadmap-item">
-            <div class="time">Months 2–7</div>
-            <div><h3>Physical-control gate</h3><p>Benchtop sensing, imaging and environmental-control prototype demonstrating stable closed-loop operation.</p></div>
-          </article>
-          <article class="roadmap-item">
-            <div class="time">Months 6–15</div>
-            <div><h3>Biological-validation gate</h3><p>Formal partner-laboratory collaboration and one predefined biological subsystem test with an animal-welfare plan.</p></div>
-          </article>
-          <article class="roadmap-item">
-            <div class="time">Months 12–24</div>
-            <div><h3>Replication gate</h3><p>Repeatability data, independent review, comparison against simulation and preparation for a larger wet-lab financing round.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="team">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="kicker">Team</div>
-            <h2>Veterinary, biological and computational perspectives.</h2>
-          </div>
-          <p class="section-copy">
-            SIBYL is being developed by an informal early-stage team. Roles below describe intended responsibilities; no claim is made that a complete laboratory organisation or validated platform already exists.
-          </p>
-        </div>
-        <div class="team-grid">
-          <article class="team-card">
-            <h3>Razin R. K.</h3>
-            <p>Veterinary medicine, animal-model direction, welfare, clinical relevance and domain collaboration.</p>
-          </article>
-          <article class="team-card">
-            <h3>S. W.</h3>
-            <p>Biotechnology, simulation, AI/ML systems, architecture and engineering integration.</p>
-          </article>
-          <article class="team-card">
-            <h3>S. D.</h3>
-            <p>Neuroscience and optogenetics perspective, with experience relevant to rodent experimental work.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="boundaries">
-      <div class="wrap">
-        <div class="boundary">
-          <div>
-            <div class="kicker">Scientific boundaries</div>
-            <h2>Ambitious, but explicit about what is not yet proven.</h2>
-            <ul>
-              <li>SIBYL has not produced a cloned animal or validated biological prototype.</li>
-              <li>Existing research supports individual components and partial transitions, not a complete repeatable pipeline.</li>
-              <li>Initial biological work is non-human and rodent-first.</li>
-              <li>Animal experiments would occur only through qualified partner laboratories with appropriate ethics and welfare review.</li>
-              <li>Human reproductive use is not an initial objective.</li>
-            </ul>
-          </div>
-          <div class="mini-orbit" aria-hidden="true"><span></span></div>
-        </div>
-        <p class="notice">
+</div>
+<div class="roadmap">
+<article class="roadmap-item tilt reveal">
+<div class="time">Months 0–3</div>
+<div><h3>Architecture gate</h3><p>Technical architecture, literature map, failure-mode register, ethics route, simulation specification and external review.</p></div>
+</article>
+<article class="roadmap-item tilt reveal">
+<div class="time">Months 2–7</div>
+<div><h3>Physical-control gate</h3><p>Benchtop sensing, imaging and environmental-control prototype demonstrating stable closed-loop operation.</p></div>
+</article>
+<article class="roadmap-item tilt reveal">
+<div class="time">Months 6–15</div>
+<div><h3>Biological-validation gate</h3><p>Formal partner-laboratory collaboration and one predefined biological subsystem test with an animal-welfare plan.</p></div>
+</article>
+<article class="roadmap-item tilt reveal">
+<div class="time">Months 12–24</div>
+<div><h3>Replication gate</h3><p>Repeatability data, independent review, comparison against simulation and preparation for a larger wet-lab financing round.</p></div>
+</article>
+</div>
+</div>
+</section>
+<section id="team">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="kicker">Team</div>
+<h2>Three leads across protocols, systems and experiments.</h2>
+</div>
+<p class="section-copy">The current structure links veterinary protocols and welfare, systems architecture and automation, and experimental design relevant to rodent research.</p>
+</div>
+<div class="team-grid">
+<article class="team-card tilt reveal"><span class="role">protocols lead</span><h3>Razin R. K.</h3><p>Veterinary protocols, animal-model definitions, welfare requirements, clinical relevance and criteria for qualified laboratory partnerships.</p></article>
+<article class="team-card tilt reveal"><span class="role">systems lead</span><h3>S. W.</h3><p>Biotechnology, system architecture, simulation, AI/ML, automation, sensing and engineering integration.</p></article>
+<article class="team-card tilt reveal"><span class="role">experiments lead</span><h3>S. D.</h3><p>Experimental design, neuroscience and optogenetics perspective, and experience relevant to rodent procedures.</p></article>
+</div>
+</div>
+</section>
+<section id="boundaries">
+<div class="wrap">
+<div class="boundary tilt reveal">
+<div>
+<div class="kicker">Scientific boundaries</div>
+<h2>Ambitious, but explicit about what is not yet proven.</h2>
+<ul>
+<li>new age sibyl project has not produced a cloned animal or validated biological prototype.</li>
+<li>Existing research supports individual components and partial transitions, not a complete repeatable pipeline.</li>
+<li>Initial biological work is non-human and rodent-first.</li>
+<li>Animal experiments would occur only through qualified partner laboratories with appropriate ethics and welfare review.</li>
+<li>Human reproductive use is not an initial objective.</li>
+</ul>
+</div>
+<div aria-hidden="true" class="mini-orbit">
+<span class="orbit-ring"></span>
+<span class="orbit-ring second"></span>
+<span class="orbit-dot green"></span>
+<span class="orbit-dot blue"></span>
+<span class="orbit-dot yellow"></span>
+<span class="orbit-core"></span>
+</div>
+</div>
+<p class="notice reveal">
           This website describes an early research direction and intended programme. It does not advertise a medical product, a completed cloning method, or demonstrated biological outcomes.
         </p>
-      </div>
-    </section>
-  </main>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>© 2026 new age sibyl project</span>
+<span>Rodent-first · Non-human · Stage-gated · Ethics-reviewed</span>
+<button class="footer-contact contact-trigger" type="button">contact</button></div>
+</footer>
+<script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  <footer>
-    <div class="wrap">
-      <span>© 2026 SIBYL Research</span>
-      <span>Rodent-first · Non-human · Stage-gated · Ethics-reviewed</span>
-    </div>
-  </footer>
-</body>
+    if (!reduceMotion) {
+      window.addEventListener('pointermove', (event) => {
+        document.body.style.setProperty('--mx', `${event.clientX}px`);
+        document.body.style.setProperty('--my', `${event.clientY}px`);
+      }, { passive: true });
+    }
+
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+
+    if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+      document.querySelectorAll('.tilt').forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          card.style.setProperty('--ry', `${(x - 0.5) * 5}deg`);
+          card.style.setProperty('--rx', `${(0.5 - y) * 5}deg`);
+        });
+
+        card.addEventListener('pointerleave', () => {
+          card.style.setProperty('--rx', '0deg');
+          card.style.setProperty('--ry', '0deg');
+        });
+      });
+    }
+  </script>
+<div aria-hidden="true" aria-labelledby="contactTitle" aria-modal="true" class="contact-modal" id="contactModal" role="dialog">
+<button aria-label="Close contact dialog" class="modal-backdrop" type="button"></button>
+<div class="modal-card">
+<button aria-label="Close contact dialog" class="modal-close" type="button">×</button>
+<div class="kicker">contact</div>
+<h2 id="contactTitle">Start a conversation with the protocols lead.</h2>
+<p>For research discussions, collaboration enquiries or relevant domain introductions, contact Razin.</p>
+<div class="email-box">
+<a href="mailto:marcusblackthorn03@gmail.com" id="contactEmail">marcusblackthorn03@gmail.com</a>
+<button id="copyEmail" type="button">copy email</button>
+</div>
+</div>
+</div><script>
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = window.matchMedia('(pointer: fine)').matches;
+
+  if (!reduced && fine) {
+    window.addEventListener('pointermove', (event) => {
+      document.body.style.setProperty('--mx', `${event.clientX}px`);
+      document.body.style.setProperty('--my', `${event.clientY}px`);
+    }, { passive: true });
+
+    const shell = document.getElementById('machineShell');
+    if (shell) {
+      shell.addEventListener('pointermove', (event) => {
+        const rect = shell.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        shell.style.transform = `rotateX(${y * -6}deg) rotateY(${x * 7}deg)`;
+      });
+      shell.addEventListener('pointerleave', () => { shell.style.transform = 'rotateX(0deg) rotateY(0deg)'; });
+    }
+
+    document.querySelectorAll('.card,.team-card,.roadmap-item,.boundary').forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--cx', `${event.clientX - rect.left}px`);
+        card.style.setProperty('--cy', `${event.clientY - rect.top}px`);
+      });
+    });
+  }
+
+  if (!reduced) {
+    const canvas = document.getElementById('field');
+    const ctx = canvas && canvas.getContext('2d');
+    if (canvas && ctx) {
+      let width = 0, height = 0, dpr = 1, points = [];
+      const pointer = { x: -9999, y: -9999 };
+      const colors = ['67,245,154','54,164,255','255,217,61'];
+      const resize = () => {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = innerWidth; height = innerHeight;
+        canvas.width = Math.floor(width * dpr); canvas.height = Math.floor(height * dpr);
+        canvas.style.width = `${width}px`; canvas.style.height = `${height}px`;
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+        const count = Math.max(30, Math.min(72, Math.floor(width / 23)));
+        points = Array.from({length:count}, (_,i) => ({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.24,vy:(Math.random()-.5)*.24,r:1+Math.random()*1.6,c:colors[i%3]}));
+      };
+      addEventListener('pointermove', e => { pointer.x=e.clientX; pointer.y=e.clientY; }, {passive:true});
+      addEventListener('pointerleave', () => { pointer.x=-9999; pointer.y=-9999; });
+      addEventListener('resize', resize); resize();
+      const draw = () => {
+        ctx.clearRect(0,0,width,height);
+        points.forEach((p,i) => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < -20) p.x=width+20; if (p.x>width+20) p.x=-20;
+          if (p.y < -20) p.y=height+20; if (p.y>height+20) p.y=-20;
+          const pd = Math.hypot(p.x-pointer.x,p.y-pointer.y);
+          if (pd<130 && pd>0) { p.x += ((p.x-pointer.x)/pd)*.55; p.y += ((p.y-pointer.y)/pd)*.55; }
+          ctx.beginPath(); ctx.fillStyle=`rgba(${p.c},.58)`; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+          for(let j=i+1;j<points.length;j++){
+            const q=points[j], dist=Math.hypot(p.x-q.x,p.y-q.y);
+            if(dist<115){ ctx.beginPath(); ctx.strokeStyle=`rgba(${p.c},${.12*(1-dist/115)})`; ctx.lineWidth=.7; ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
+          }
+        });
+        requestAnimationFrame(draw);
+      };
+      draw();
+    }
+  }
+
+  const modal = document.getElementById('contactModal');
+  if (modal) {
+    const close = modal.querySelector('.modal-close');
+    const backdrop = modal.querySelector('.modal-backdrop');
+    let previousFocus = null;
+    const openModal = () => { previousFocus=document.activeElement; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); close.focus(); };
+    const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); if(previousFocus) previousFocus.focus(); };
+    document.querySelectorAll('.contact-trigger').forEach(button => button.addEventListener('click', openModal));
+    close.addEventListener('click', closeModal); backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+    const copy = document.getElementById('copyEmail');
+    const email = document.getElementById('contactEmail').textContent.trim();
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(email); copy.textContent='copied'; }
+      catch { copy.textContent='copy manually'; }
+      setTimeout(() => { copy.textContent='copy email'; }, 1800);
+    });
+  }
+})();
+</script></body>
 </html>
+
