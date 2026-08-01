@@ -680,9 +680,9 @@ header::after { opacity: .8; background: linear-gradient(90deg, transparent, var
 .machine-core { position:absolute; left:50%; top:48%; width:23%; aspect-ratio:1; transform:translate(-50%,-50%); display:grid; place-items:center; border-radius:50%; background:conic-gradient(from 20deg,rgba(67,245,154,.85),rgba(54,164,255,.85),rgba(255,217,61,.85),rgba(67,245,154,.85)); box-shadow:0 0 50px rgba(54,164,255,.25),inset 0 0 30px rgba(2,5,10,.6); animation:coreFloat 4s ease-in-out infinite; }
 .machine-core span { width:74%; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; background:#050c15; font-size:.72rem; font-weight:850; letter-spacing:.1em; text-transform:uppercase; }
 .machine-node { position:absolute; min-width:116px; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:rgba(3,10,18,.9); box-shadow:0 12px 35px rgba(0,0,0,.35); font-size:.72rem; font-weight:800; letter-spacing:.05em; text-align:center; text-transform:uppercase; animation:nodeFloat 4.5s ease-in-out infinite; }
-.node-model { left:6%; top:15%; color:var(--green); } .node-control { right:5%; top:17%; color:var(--blue); animation-delay:.5s; } .node-validate { left:5%; bottom:17%; color:var(--yellow); animation-delay:1s; } .node-repeat { right:5%; bottom:15%; color:var(--green); animation-delay:1.5s; }
-.machine-readout { position:absolute; left:22px; right:22px; bottom:18px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.machine-readout span { padding:7px 8px; border:1px solid rgba(255,255,255,.09); border-radius:10px; background:rgba(2,7,12,.6); color:#9fb3c1; font-size:.65rem; letter-spacing:.08em; text-align:center; text-transform:uppercase; }
+.node-model { left:6%; top:15%; color:var(--green); } .node-control { right:5%; top:17%; color:var(--blue); animation-delay:.5s; } .node-validate { left:5%; bottom:22%; color:var(--yellow); animation-delay:1s; } .node-repeat { right:5%; bottom:22%; color:var(--green); animation-delay:1.5s; }
+.machine-readout { position:absolute; left:22px; right:22px; bottom:10px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.machine-readout span { display:grid; place-items:center; padding:7px 8px; border:1px solid rgba(255,255,255,.09); border-radius:10px; background:rgba(2,7,12,.6); color:#9fb3c1; font-size:.65rem; letter-spacing:.08em; text-align:center; text-transform:uppercase; }
 .launch-ticker { position:absolute; left:0; right:0; bottom:0; overflow:hidden; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); background:rgba(3,8,14,.65); backdrop-filter:blur(12px); }
 .ticker-track { width:max-content; display:flex; gap:34px; padding:10px 0; color:#9fb3c1; font-size:.73rem; font-weight:750; letter-spacing:.11em; text-transform:uppercase; animation:tickerMove 25s linear infinite; }
 .ticker-track span::before { content:"◆"; margin-right:12px; color:var(--green); } .ticker-track span:nth-child(3n+2)::before { color:var(--blue); } .ticker-track span:nth-child(3n)::before { color:var(--yellow); }
@@ -734,7 +734,7 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <a href="#approach">Approach</a>
 <a href="#roadmap">Roadmap</a>
 <a href="#team">Team</a>
-<a href="#boundaries">Boundaries</a>
+<a href="#boundaries">Direction</a>
 <button class="nav-contact contact-trigger" type="button">Contact</button></div>
 </nav>
 </div>
@@ -761,7 +761,7 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <div class="orbit orbit-a"><i></i></div>
 <div class="orbit orbit-b"><i></i></div>
 <div class="orbit orbit-c"><i></i></div>
-<div class="machine-core"><span>identity</span></div>
+<div class="machine-core"><span>biology</span></div>
 <div class="machine-node node-model">measure</div>
 <div class="machine-node node-control">operate</div>
 <div class="machine-node node-validate">validate</div>
