@@ -5,13 +5,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="New Age Sibyl Project is a rodent-first R&amp;D programme exploring traceable biological lineages, controlled developmental systems and reproducible preclinical models." name="description"/>
+<meta content="New Age Sibyl Project is building rodent-first biological identity infrastructure that compounds from laboratory-animal operations toward clonal lineages and replacement biology." name="description"/>
 <meta content="#05080d" name="theme-color"/>
-<meta content="New Age Sibyl Project — Traceable Biological Systems" property="og:title"/>
-<meta content="A rodent-first R&amp;D programme combining reproductive biology, controlled environments, simulation and genomic quality control." property="og:description"/>
+<meta content="New Age Sibyl Project — Biological Identity Infrastructure" property="og:title"/>
+<meta content="A vendor-neutral laboratory-animal operations layer designed to compound toward clonal-lineage control, customized preclinical testing and identity-matched replacement biology." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.newagesibyl.com/" property="og:url"/>
-<title>New Age Sibyl Project — Traceable Biological Systems</title>
+<title>New Age Sibyl Project — Biological Identity Infrastructure</title>
 <style>
     :root {
       --bg: #03070c;
@@ -395,12 +395,12 @@
     .team-card p,
     .boundary p { margin: 0; color: var(--muted); }
 
-    .team-card:first-child {
+    .team-card {
       border-color: rgba(255,215,90,0.42);
       box-shadow: inset 0 1px 0 rgba(255,215,90,0.08);
     }
-
-    .team-card:first-child h3::after {
+    
+    .team-card h3::after {
       content: "";
       color: var(--yellow);
       font-size: 0.72rem;
@@ -413,7 +413,11 @@
       display: grid;
       gap: 14px;
     }
-
+    
+    .roadmap-horizon {
+      margin-top: 56px;
+    }
+    
     .roadmap-item {
       padding: 22px;
       display: grid;
@@ -642,6 +646,15 @@ header::after { opacity: .8; background: linear-gradient(90deg, transparent, var
 .hero-enter { animation: launchIn .9s cubic-bezier(.2,.75,.25,1) both; }
 .hero-machine.hero-enter { animation-delay: .12s; }
 .hero h1 { font-size: clamp(3.35rem, 7.9vw, 7.2rem); line-height: .91; letter-spacing: -.068em; }
+
+.hero-subline {
+  margin: -2px 0 16px;
+  color: var(--blue-soft);
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  font-weight: 750;
+  letter-spacing: .01em;
+}
+
 .tri-green, .tri-blue, .tri-yellow { display: inline-block; color: transparent; background-clip: text; -webkit-background-clip: text; background-size: 220% 100%; animation: textSpectrum 5s linear infinite; }
 .tri-green { background-image: linear-gradient(90deg, var(--green-soft), var(--green), var(--blue-soft), var(--green-soft)); }
 .tri-blue { background-image: linear-gradient(90deg, var(--blue-soft), var(--blue), var(--yellow-soft), var(--blue-soft)); }
@@ -729,16 +742,17 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <main id="top">
 <div class="wrap hero">
 <div class="hero-copy hero-enter">
-<div class="eyebrow"><span class="dot"></span> rodent-first biological systems r&amp;d</div>
-<h1><span class="tri-green">Trace</span> the lineage.<br/><span class="tri-blue">Control</span> the system.<br/><span class="tri-yellow">Test</span> the claim.</h1>
-<p class="lead">New Age Sibyl Project explores whether reproductive biology, controlled developmental environments, simulation and genomic quality control can be integrated into more traceable and reproducible laboratory animal lineages.</p>
+<div class="eyebrow"><span class="dot"></span> rodent-first biological identity r&amp;d</div>
+<h1><span class="tri-green">Building</span> universal<br/><span class="tri-blue">biological identity</span><br/><span class="tri-yellow">infrastructure.</span></h1>
+<p class="hero-subline">Trace the lineage. Control the system. Test the claim.</p>
+<p class="lead">New Age Sibyl Project is building rodent-first biological identity infrastructure: a vendor-neutral operations layer for laboratory animals today, designed to compound toward clonal-lineage control, customized preclinical testing and identity-matched replacement biology later.</p>
 <div class="actions">
 <a class="button primary" href="#approach">explore the architecture <span aria-hidden="true">→</span></a>
 <a class="button online" href="https://github.com/NewAgeSibyl" rel="noopener" target="_blank">follow our work online <span aria-hidden="true">↗</span></a>
 
 </div>
 <div aria-label="Project characteristics" class="launch-chips">
-<span>non-human</span><span>rodent-first</span><span>stage-gated</span><span>wet-lab directed</span>
+<span>rodent-first</span><span>vendor-neutral</span><span>stage-gated</span><span>wet-lab directed</span>
 </div>
 </div>
 <div aria-label="Animated project architecture" class="hero-machine hero-enter">
@@ -748,10 +762,10 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <div class="orbit orbit-b"><i></i></div>
 <div class="orbit orbit-c"><i></i></div>
 <div class="machine-core"><span>identity</span></div>
-<div class="machine-node node-model">model</div>
-<div class="machine-node node-control">control</div>
+<div class="machine-node node-model">measure</div>
+<div class="machine-node node-control">operate</div>
 <div class="machine-node node-validate">validate</div>
-<div class="machine-node node-repeat">repeat</div>
+<div class="machine-node node-repeat">compound</div>
 <div class="machine-readout"><span>simulation</span><span>physical systems</span><span>partner lab</span></div>
 </div>
 </div>
@@ -770,7 +784,7 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <h2>“Standardized” does not mean fully traceable.</h2>
 </div>
 <p class="section-copy">
-            Laboratory animals can differ through genetic drift, de novo mutations, epigenetic state, microbiome, housing, diet, handling, age and developmental history. New Age Sibyl Project asks whether laboratories can preserve and verify a biological reference lineage more accurately than present breeding and cloning methods allow.
+            Standardization is not enough when biological starting conditions are not measured. We track lineage, environment, behaviour and experimental provenance so laboratories can see what changed before conclusions are trusted.
           </p>
 </div>
 <div class="grid-3">
@@ -797,32 +811,32 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <div class="section-head reveal">
 <div>
 <div class="kicker">The approach</div>
-<h2>A wet-lab goal with an engineering control layer.</h2>
+<h2>A practical operations layer with a compounding biological roadmap.</h2>
 </div>
 <p class="section-copy">
-            Simulation and AI are used to narrow assumptions and monitor quality; they do not replace the biological programme. Each stage must produce evidence before the next, more expensive stage begins.
-          </p>
+  The first layer helps labs measure and operate rodent studies more clearly. Each validated layer creates data, workflows and evidence for the next, more ambitious stage.
+</p>
 </div>
 <div class="grid-4">
 <article class="card tilt reveal">
-<span class="number">MODEL</span>
-<h3>Map failure modes</h3>
-<p>Build a reviewed architecture, literature map, simulation specification and risk register.</p>
+<span class="number">MEASURE</span>
+<h3>Capture starting conditions</h3>
+<p>Connect lineage, environment, behaviour and experimental provenance instead of treating them as separate records.</p>
 </article>
 <article class="card tilt reveal">
-<span class="number">BUILD</span>
-<h3>Prototype controls</h3>
-<p>Test sensing, imaging, environmental stability and closed-loop operation without reproductive experiments.</p>
+<span class="number">OPERATE</span>
+<h3>Run traceable studies</h3>
+<p>Support animal, facility and study workflows through a vendor-neutral operations layer.</p>
 </article>
 <article class="card tilt reveal">
 <span class="number">VALIDATE</span>
-<h3>Partner-lab study</h3>
-<p>Test one narrow biological subsystem through a qualified laboratory with appropriate oversight.</p>
+<h3>Prove useful change</h3>
+<p>Test defined claims through qualified partner labs, appropriate oversight and repeatable evidence.</p>
 </article>
 <article class="card tilt reveal">
-<span class="number">REPEAT</span>
-<h3>Demand replication</h3>
-<p>Compare experiment with simulation, repeat the result and obtain independent technical review.</p>
+<span class="number">COMPOUND</span>
+<h3>Build toward biological control</h3>
+<p>Use validated data and systems to advance rodent identity products, clonal lineages and replacement-biology collaborations.</p>
 </article>
 </div>
 </div>
@@ -838,6 +852,18 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
             The first programme is designed to convert an informed hypothesis into a credible experimental platform. It is a step towards achieving complete indefinite cloning.
           </p>
 </div>
+<section id="roadmap">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="kicker">Roadmap</div>
+<h2>The first 24 months.</h2>
+</div>
+<p class="section-copy">
+  These gates convert the current thesis into a working product, partner-lab evidence and a credible biological programme.
+</p>
+</div>
+
 <div class="roadmap">
 <article class="roadmap-item tilt reveal">
 <div class="time">Months 0–3</div>
@@ -849,11 +875,40 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 </article>
 <article class="roadmap-item tilt reveal">
 <div class="time">Months 6–15</div>
-<div><h3>Biological-validation gate</h3><p>Formal partner-laboratory collaboration and one predefined biological subsystem test with an animal-welfare plan.</p></div>
+<div><h3>Biological-validation gate</h3><p>Formal partner-lab collaboration and one predefined biological subsystem test with an animal-welfare plan.</p></div>
 </article>
 <article class="roadmap-item tilt reveal">
 <div class="time">Months 12–24</div>
 <div><h3>Replication gate</h3><p>Repeatability data, independent review, comparison against simulation and preparation for a larger wet-lab financing round.</p></div>
+</article>
+</div>
+
+<div class="section-head reveal roadmap-horizon">
+<div>
+<div class="kicker">Public horizon</div>
+<h2>The compounding roadmap.</h2>
+</div>
+<p class="section-copy">
+  Each stage creates products, evidence and collaborations that support the next.
+</p>
+</div>
+
+<div class="roadmap">
+<article class="roadmap-item tilt reveal">
+<div class="time">Years 0–2</div>
+<div><h3>LineageOps + partner-lab validation</h3><p>Build the vendor-neutral rodent operations layer, run facility pilots and validate one defined biological subsystem with a qualified partner lab.</p></div>
+</article>
+<article class="roadmap-item tilt reveal">
+<div class="time">Years 2–4</div>
+<div><h3>Rodent biological identity products</h3><p>Turn validated lineage, environment, behaviour and outcome data into products for more controlled rodent research and customized testing.</p></div>
+</article>
+<article class="roadmap-item tilt reveal">
+<div class="time">Years 4–6</div>
+<div><h3>Clonal-lineage platform</h3><p>Advance toward verified, repeatable clonal-lineage control through staged R&amp;D and external validation.</p></div>
+</article>
+<article class="roadmap-item tilt reveal">
+<div class="time">Years 6–10</div>
+<div><h3>Veterinary + replacement-biology collaborations</h3><p>Expand through specialist collaborations toward veterinary cloning, tissue work and identity-matched replacement biology.</p></div>
 </article>
 </div>
 </div>
@@ -868,9 +923,9 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <p class="section-copy">The current structure links veterinary protocols and welfare, systems architecture and automation, and experimental design relevant to rodent research.</p>
 </div>
 <div class="team-grid">
-<article class="team-card tilt reveal"><span class="role">protocols lead</span><h3>Razin R. K.</h3><p>Veterinary protocols, animal-model definitions, welfare requirements, clinical relevance and criteria for qualified laboratory partnerships.</p></article>
-<article class="team-card tilt reveal"><span class="role">systems lead</span><h3>S. W.</h3><p>Biotechnology, system architecture, simulation, AI/ML, automation, sensing and engineering integration.</p></article>
-<article class="team-card tilt reveal"><span class="role">experiments lead</span><h3>S. D.</h3><p>Experimental design, neuroscience and optogenetics perspective, and experience relevant to rodent procedures.</p></article>
+<article class="team-card tilt reveal"><span class="role">protocols lead</span><h3>R. R. K.</h3><p>Vet med, animal-model workflows, welfare, protocols, org experience and partner-lab coordination.</p></article>
+<article class="team-card tilt reveal"><span class="role">systems lead</span><h3>S. S. W.</h3><p>Biotech, infotech, AI/ML, simulation, automation, sensing, software and commercial ops.</p></article>
+<article class="team-card tilt reveal"><span class="role">experiments lead</span><h3>S. S. D.</h3><p>Experimental biosci, neuroscience, optogenetics, experimental design and rodent-procedure experience.</p></article>
 </div>
 </div>
 </section>
@@ -878,10 +933,11 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <div class="wrap">
 <div class="boundary tilt reveal">
 <div>
-<div class="kicker">Scientific boundaries</div>
-<h2>Ambitious, but aware of what is not yet there.</h2>
+<div class="kicker">Project Philosophy</div>
+<h2>Start practical. Compound toward the extraordinary.</h2>
+<p>New Age Sibyl Project starts with rodent operations and biological identity, then advances through stage-gated R&amp;D toward clonal-lineage control and replacement biology with qualified collaborators.</p>
 <ul>
-<li>New Age Sibyl Project has aimed to eventually produce either a cloned animal or validated biological prototype.</li>
+<li>The aim is to eventually produce either a validated biological prototype.</li>
 <li>Existing research supports individual components and partial transitions and implies the feasibility of a complete repeatable pipeline.</li>
 <li>Initial biological work is non-human and rodent-first.</li>
 <li>Animal experiments would occur through qualified partner laboratories with required ethics and welfare review.</li>
@@ -898,7 +954,7 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 </div>
 </div>
 <p class="notice reveal">
-          This website describes an early research direction and intended programme. It does not advertise a medical product, a completed cloning method, or demonstrated biological outcomes.
+          This website describes an early research and venture direction. It does not advertise a finished product, a completed method or a demonstrated outcome yet.
         </p>
 </div>
 </section>
@@ -906,7 +962,7 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <footer>
 <div class="wrap">
 <span>© 2026 New Age Sibyl Project</span>
-<span>Rodent-first · Non-human · Stage-gated · Ethics-reviewed</span>
+<span>Rodent-first · Stage-gated · Ethics-appropriate</span>
 <button class="footer-contact contact-trigger" type="button">Contact</button></div>
 </footer>
 <script>
@@ -956,7 +1012,7 @@ section::before { background:linear-gradient(90deg,transparent,rgba(54,164,255,.
 <div class="modal-card">
 <button aria-label="Close contact dialog" class="modal-close" type="button">×</button>
 <div class="kicker">Contact</div>
-<h2 id="contactTitle">Start a conversation with the protocols lead.</h2>
+<h2 id="contactTitle">Start a conversation with the team representative.</h2>
 <p>For research discussions, collaboration enquiries or relevant domain introductions, contact us.</p>
 <div class="email-box">
 <a href="mailto:marcusblackthorn03@gmail.com" id="contactEmail">marcusblackthorn03@gmail.com</a>
